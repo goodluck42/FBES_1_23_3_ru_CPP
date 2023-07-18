@@ -68,8 +68,11 @@ int main()
     double d = 42.13; // 8 bytes
     long double ld = 90.22; // 8 bytes
 
-    cout << sizeof(double);
+    cout << sizeof(double) << '\n';
 
+    setlocale(0, "ru");
+
+    cout << "Привет \\C++!" << '\n';
 }
 
 // CTRL (hold) + K + C - to comment
