@@ -138,12 +138,17 @@ int main()
 }*/
 
     // explicit typecasting
-    {
+    /*{
         char c = '#';
 
         int code = (int)c; // int(c) in python
 
         cout << code << '\n';
         cout << (int)c << '\n';
-    }
+    }*/
+    
+    int value;
+    
+    cout << "Enter a value -> ";
+    cin >> value;
 }
