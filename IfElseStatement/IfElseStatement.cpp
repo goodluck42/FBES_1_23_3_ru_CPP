@@ -6,6 +6,7 @@ typedef unsigned long long uint64;
 
 int main()
 {
+    setlocale(0, "ru");
     //{
     //    int cents;
     //    int dollars;
@@ -95,8 +96,8 @@ int main()
     }*/
 
 
-    int num1;
-    int num2;
+   // int num1;
+    //int num2;
 
     // Task2
     /* {
@@ -167,7 +168,7 @@ int main()
         }
     }*/
 
-    {
+    /*{
         int value = -1;
 
         // [1, 100]
@@ -176,5 +177,5 @@ int main()
         {
             cout << value << " is not in range";
         }
-    }
+    }*/
 }
