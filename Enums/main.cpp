@@ -25,9 +25,11 @@ int main()
 {
 	int cout = 42;
 	int cin = 10;
-	int value;
+	int value = 20;
 
-	std::cin >> value;
+	system("color ");
+
+	//std::cin >> value;
 	std::cout << "Hello C++\n" << value << std::endl;
 
 	//{
@@ -41,7 +43,7 @@ int main()
 	//}
 	
 	// :: - scope resolution operator
-	/*{
+	{
 		char input;
 
 		std::cout << "Enter mode: ";
@@ -75,7 +77,7 @@ int main()
 				std::cout << text << '\n';
 			}
 		}
-	}*/
+	}
 	/* {
 		int input;
 
