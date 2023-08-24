@@ -17,6 +17,70 @@ enum class Audience2
 };
 
 
+class Int32
+{
+private:
+	int m_value;
+public:
+	Int32(int a_value) : m_value(a_value) { }
+
+	int get() const
+	{
+		return this->m_value;
+	}
+
+	Int32 operator++(int)
+	{
+		Int32 copy{ *this };
+		std::cout << "operator++(int)" << '[' << copy.m_value << ']' << '\n';
+
+		this->m_value += 1;
+
+		return copy;
+	}
+	
+	Int32 operator--(int)
+	{
+		Int32 copy{ *this };
+		std::cout << "operator--(int)" << '[' << copy.m_value << ']' << '\n';
+
+		this->m_value -= 1;
+
+		return copy;
+	}
+	
+	Int32& operator++()
+	{
+		this->m_value += 1;
+		std::cout << "operator++()" << '[' << this->m_value << ']' << '\n';
+
+		return *this;
+	}
+	
+	Int32& operator--()
+	{
+		this->m_value -= 1;
+		std::cout << "operator--()" << '[' << this->m_value << ']' << '\n';
+
+		return *this;
+	}
+
+	Int32 operator+(const Int32& rhs)
+	{
+		std::cout << "operator+(const Int32& rhs)" << "[" << this->m_value << '+' << rhs.m_value << " = " << this->m_value + rhs.m_value << ']' << '\n';
+		return Int32{ this->m_value + rhs.m_value };
+	}
+	
+	Int32 operator-(const Int32& rhs)
+	{
+		std::cout << "operator-(const Int32& rhs)" << "[" << this->m_value << '-' << rhs.m_value << " = " << this->m_value - rhs.m_value << ']' << '\n';
+
+		return Int32{ this->m_value - rhs.m_value };
+	}
+};
+
+
+
 int main()
 {
 	//Audience1 blablabla = Audience1::PC1;
@@ -83,15 +147,26 @@ int main()
 	}*/
 
 	// Prefix & postfix increment & decrement
-	//{
-	//	int a = 5; // a = 6
-	//	//      5   +  6  - 5
-	//	int b = a++ + ++a - a--;
-	//	
-	//	std::cout << a << '\n';
-	//	std::cout << b << '\n';
-	//}
+	{
+		/* {
+			int a = 5; // a = 5
+			//      5   +   6 - 6
+			int b = a++ + ++a - a--;
 
+			std::cout << a << '\n';
+			std::cout << b << '\n';
+		}*/
+
+		{
+			Int32 a = 5; // a = 6
+			//
+			Int32 b = (a++ + ++a - a--);
+
+			std::cout << a.get() << '\n';
+			std::cout << b.get() << '\n';
+		}
+	}
+	
 	/* {
 		int i = 5;
 
@@ -189,7 +264,7 @@ int main()
 		}
 	}*/
 
-	std::cout << "1. First\n2. Second\n";
+	/*std::cout << "1. First\n2. Second\n";
 
 	bool flag = true;
 
@@ -216,13 +291,10 @@ int main()
 			case 0:
 			{
 				flag = false;
-				break;
 			}
 				
 		}
-
-
-	}
+	}*/
 
 
 
