@@ -1,6 +1,7 @@
 #include <iostream>
 #include <random>
 #include <Windows.h>
+#include <iomanip>
 
 int main()
 {
@@ -34,7 +35,7 @@ int main()
 			std::cout << b << '\n';
 		}*/
 
-		/*constexpr int size = 4;
+		/*constexpr size_t size = 4;
 
 		// Stack array
 		unsigned int arr[size]{};
@@ -61,8 +62,12 @@ int main()
 		std::cout << rand() % (max - min + 1) + min;
 	}*/
 
-	// C++ style random
-	{
+	// C++ style random (int)
+	/* {
+		constexpr size_t size = 6;
+
+		int arr[size];
+
 		std::default_random_engine engine(time(0));
 
 		std::uniform_int_distribution<int> myrange(10, 99);
@@ -70,5 +75,55 @@ int main()
 		int rnd = myrange(engine);
 
 		std::cout << rnd << '\n';
+	}*/
+
+	// C++ style random (double)
+	{
+		constexpr size_t size = 10;
+
+		double arr[size];
+
+		std::default_random_engine engine(time(0));
+
+		std::uniform_real_distribution<double> myrange(10, 99);
+
+		for (int i = 0; i < size; i++)
+		{
+			arr[i] = myrange(engine);
+		}
+
+		std::cout << std::setprecision(8);
+
+		for (int i = 0; i < size; i++)
+		{
+			std::cout << arr[i] << '\n';
+		}
 	}
+
+	/* {
+		//typedef unsigned long long ullong;
+
+		//ullong a = 42UL;
+
+		constexpr size_t size = 10;
+
+		int arr[size]{};
+
+
+		std::default_random_engine engine(time(0));
+
+		std::uniform_int_distribution<int> myrange(10, 99);
+
+		for (int i = 0; i < size; i++)
+		{
+			int rnd = myrange(engine);
+
+			arr[i] = rnd;
+		}
+
+		for (int i = 0; i < size; i++)
+		{
+			std::cout << arr[i] << '\n';
+		}
+	}*/
 }
