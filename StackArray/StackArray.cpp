@@ -78,7 +78,7 @@ int main()
 	}*/
 
 	// C++ style random (double)
-	{
+	/* {
 		constexpr size_t size = 10;
 
 		double arr[size];
@@ -98,7 +98,7 @@ int main()
 		{
 			std::cout << arr[i] << '\n';
 		}
-	}
+	}*/
 
 	/* {
 		//typedef unsigned long long ullong;
@@ -126,4 +126,20 @@ int main()
 			std::cout << arr[i] << '\n';
 		}
 	}*/
+
+	{
+		constexpr size_t size = 3;
+
+		int arr[size];
+
+		for (int i = 0; i < size; i++)
+		{
+			std::cin >> arr[i];
+		}
+		
+		for (int i = 0; i < size; i++)
+		{
+			std::cout << arr[i] << '\t';
+		}
+	}
 }
