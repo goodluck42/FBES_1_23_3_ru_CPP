@@ -26,7 +26,7 @@ int main(int argc, char* argv[])
     
 
     // Bubble Sort
-    /*{
+    {
         // int a = 10;
         // int b = 20;
         // int temp = a;
@@ -56,10 +56,10 @@ int main(int argc, char* argv[])
         }
 
         std::cout << '\n';
-    }*/
+    }
 
     // Selection Sort
-    {
+    /*{
         for (int i = 0; i < size - 1; ++i)
         {
             int min = i;
@@ -87,7 +87,7 @@ int main(int argc, char* argv[])
         }
 
         std::cout << '\n';
-    }
+    }*/
 
     // Insertion Sort
     /*{
