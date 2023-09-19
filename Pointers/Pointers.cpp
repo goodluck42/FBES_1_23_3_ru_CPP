@@ -109,11 +109,19 @@ int main(int argc, char* argv[])
     }
 
     {
-        int* result = foo();
+        // int* result = foo();
+        //
+        // print<int>(result, 3);
+        //
+        // delete[] result;
 
-        print<int>(result, 3);
+        int a = 3, b;
 
-        delete[] result;
+        int c = a % b;
+
+        std::cout << a << '\n';
+        std::cout << b << '\n';
+        std::cout << c << '\n';
     }
     
     return 0;
