@@ -120,7 +120,7 @@ int main(int argc, char* argv[])
     append(arr, 11); // arr.append(11)
     append(arr, 15); // arr.append(15)
     append(arr, 42); // arr.append(42)
-
+    
     print(arr); // print(arr)
 
     destroy(arr);
