@@ -22,7 +22,15 @@ int* reallocate(int* data, int* capacity, int size)
     return data;
 }
 
+template<typename T>
+T input(const char* text)
+{
+    T value;
+    std::cout << text;
+    std::cin >> value;
 
+    return value;
+}
 
 int* append(int* data, int* capacity, int* size, int value)
 {
@@ -53,7 +61,7 @@ void print(int* arr, int size)
 
 int main(int argc, char* argv[])
 {
-    int capacity = 4;
+    int capacity = input<int>("Enter capacity: ");
     int size = 0;
 
     int* arr = new int[capacity];
