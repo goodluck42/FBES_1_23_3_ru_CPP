@@ -11,6 +11,19 @@ void foo(char* text) // mutable char array
     
 }
 
+void print(const char* str)
+{
+    int i = 0;
+
+    while (str[i] != '\0')
+    {
+        printf("%c", str[i]);
+        ++i;
+    }
+
+    printf("\n");
+}
+
 int main(int argc, char* argv[])
 {
     char* str = new char[8];
@@ -130,5 +143,24 @@ int main(int argc, char* argv[])
         delete[] heap_str;
     }*/
 
+    // print("Hello C++");
+    
+    {
+        int a, b;
+
+        std::cout << "Enter a and b => ";
+        std::cin >> a >> b;
+        std::cout << a + b << '\n';
+
+        std::cin.ignore();
+        
+        constexpr int size = 64;
+        char buffer[size]{};
+
+        std::cout << "Enter string => ";
+        std::cin.getline(buffer, size);
+
+        std::cout << "String length = " << strlen(buffer);
+    }
     return 0;
 }
