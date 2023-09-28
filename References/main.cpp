@@ -11,7 +11,7 @@ void change(int* value)
     *value = 90;
 }
 
-int main(int argc, char* argv[])
+int main(void)
 {
 
     // const int* / pointer to const value
