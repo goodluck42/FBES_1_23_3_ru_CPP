@@ -20,7 +20,7 @@ int** generate_mdarr(int rows, int cols)
 
     for (int i = 0; i < rows; ++i)
     {
-        mdarr[i] = new int[cols];
+        mdarr[i] = new int[cols]; // int* = mdarr[i]
     }
 
     for (int i = 0; i < rows; ++i)
@@ -32,6 +32,16 @@ int** generate_mdarr(int rows, int cols)
     }
 
     return mdarr;
+}
+
+void destroy_mdarr(int** mdarr, int rows)
+{
+    for (int i = 0; i < rows; ++i)
+    {
+        delete[] mdarr[i]; // int* = mdarr[i] 
+    }
+
+    delete[] mdarr;
 }
 
 void print_array(int* array, int size)
@@ -57,7 +67,6 @@ void print_array(int* array, int size)
 
     std::cout << " }";
 }
-
 void print_array(int** array, int rows, int cols)
 {
     std::cout << "{\n";
@@ -131,9 +140,12 @@ int main(int argc, char* argv[])
 
         print_array(mdarr, rows, cols);
 
-        
+        destroy_mdarr(mdarr, rows);
     }
 
+
+    Array<Array<int>> c = create<Array<int>>();
+    
     std::cout << '\n';
     system("pause");
     return 0;
