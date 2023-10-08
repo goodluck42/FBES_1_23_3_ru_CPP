@@ -56,7 +56,6 @@ void remove(String& str, char c)
 }
 
 
-
 struct Object
 {
 };
@@ -88,15 +87,92 @@ template <typename T>
 void s(TObject<T>*) { std::cout << "s(TObject<T>*);"; }
 
 
+void c()
+{
+    std::cout << "4" << "\n";
+}
+
+void b()
+{
+    std::cout << "3" << '\n';
+    c();
+    std::cout << "5" << "\n";
+}
+
+void a()
+{
+    std::cout << "1" << '\n';
+    b();
+    std::cout << "2" << '\n';
+}
+
+
+void append(String& str, const char* c_str)
+{
+    // Realloc
+
+    int cap = str.size + strlen(c_str);
+    char* mem = new char[cap];
+
+    memcpy(mem, str.memory, str.size * sizeof(char));
+
+    delete[] str.memory;
+
+    str.memory = mem;
+
+    strcat_s(str.memory, cap, c_str);
+}
+
+
 int main(int argc, char* argv[])
 {
-    // String s = create("hello world");
-    //
-    // remove(s, 'l');
-    //
-    // std::cout << s.memory;
-    //
-    // delete[] s.memory;
+    String s = create("hello");
 
+    append(s, " world");
+
+    std::cout << s.memory;
+
+    delete[] s.memory;
+
+
+    // int size = 0;
+    // int* ptr = &size;
+    //
+    // std::cout << &size << '\n';
+    //
+    // int capacity = 5;
+    // int* arr = new int[capacity]{};
+    //
+    // arr[0] = 20;
+    // ++size;
+    //
+    // arr[1] = 30;
+    // ++size;
+    //
+    // arr[2] = 42;
+    // ++size;
+    //
+    // arr[3] = 42;
+    // ++size;
+    //
+    // arr[4] = 50;
+    // ++size;
+    //
+    // for (int i = 0; i < size; ++i)
+    // {
+    //     std::cout << arr[i] << '\n';
+    // }
+    //
+    // delete[] arr;
+
+
+    const char* text = "foo123!@#4";
+
+    int letters = 0;
+    int digits = 0;
+    int other = 0;
+    
+    count_all(text);
+    
     return 0;
 }
