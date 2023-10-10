@@ -121,6 +121,18 @@ void print(Array<T>* arr)
     }
 }
 
+template<typename T>
+void insert(Array<T>* arr, int index, T element)
+{
+    
+}
+
+template<typename T>
+Array<T>* concat(Array<T>* arr1, Array<T>* arr2)
+{
+    
+}
+
 int main(int argc, char* argv[])
 {
     // Error type = Error::NO_ERROR;
