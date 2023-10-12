@@ -1,6 +1,18 @@
 #include <iostream>
 
 
+struct MyStruct
+{
+    int data;
+};
+
+struct String
+{
+    char* data;
+    int size;
+    int capacity;
+};
+
 int main(int argc, char* argv[])
 {
     // strlen() - получает длину строки
@@ -131,14 +143,20 @@ int main(int argc, char* argv[])
 
     //ato*
 
-    {
-        const char* str = "12.9";
+    // {
+    //     const char* str = "12.9";
+    //
+    //     double result = atof(str);
+    //     
+    //     std::cout << result * 2 << '\n';
+    // }
 
-        double result = atof(str);
-        
-        std::cout << result * 2 << '\n';
-    }
-    
-    
+    MyStruct s;
+
+    s.data = 10;
+
+    std::cout << s.data;
+
+
     return 0;
 }
