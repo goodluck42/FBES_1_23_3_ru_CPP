@@ -53,6 +53,35 @@ struct StrangeArray
     int d;
 };
 
+struct Inner // 16b
+{
+    double a;
+    char b;
+};
+
+struct Outer
+{
+    int a; // 4 of 8*
+    char b; // 5 of 8
+    int c; // 4 of 8*
+    Inner inner; // 8 of 8* + 8 of 8*
+};
+
+
+
+
+
+struct Student // 16b
+{
+    char* name;
+    int age;
+};
+
+struct Audience
+{
+    int number; // 4 of 8
+    Student students[3]; // 16b * 3
+};
 
 int main(int argc, char* argv[])
 {
@@ -72,19 +101,30 @@ int main(int argc, char* argv[])
     }*/
 
 
-    StrangeArray arr;
+    /*{
+        StrangeArray arr;
 
-    arr.a = 10;
-    arr.b = 20;
-    arr.c = 30;
-    arr.d = 40;
+        arr.a = 10;
+        arr.b = 20;
+        arr.c = 30;
+        arr.d = 40;
 
-    int* data = (int*)&arr;
+        int* data = (int*)&arr;
 
-    for (int i = 0; i < 4; ++i)
-    {
-        std::cout << data + i << " = "  << data[i] << '\n';
-    }
+        for (int i = 0; i < 4; ++i)
+        {
+            std::cout << data + i << " = "  << data[i] << '\n';
+        }
+    }*/
+
+
+    Audience aud;
+
+    aud.students[0].age = 10;
+
+    aud->students[0].age = 10;
+    
+    //aud->students[0].name = 10;
     
     return 0;
 }
