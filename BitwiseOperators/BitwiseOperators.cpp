@@ -241,7 +241,10 @@ int main()
         std::cout << (short)value << '\n';
         std::cout << (short)(value >> 16) << '\n'; 
     }*/
+    double a = 1;
+    void* ptr = &a;
 
+    
     std::cout << '\n';
     system("pause");
 }

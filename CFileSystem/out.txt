@@ -1,0 +1,4 @@
+﻿Character1: H
+Character2: a
+First line: llo_123456789_A_123456789_B_123456789_C_123456789_D
+Second line: Cześć
