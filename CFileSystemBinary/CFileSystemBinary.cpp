@@ -198,7 +198,7 @@ int main(int argc, char* argv[])
         (void)std::fclose(file);
     }*/
 
-    {
+    /*{
         FILE* file = std::fopen("data.bin", "rb");
 
         if (file == nullptr)
@@ -237,7 +237,23 @@ int main(int argc, char* argv[])
 
 
         (void)std::fclose(file);
-    }
+    }*/
 
+    
+
+    // 525690
+    // fputc
+    // fputs
+    // fputws
+    // fputwc
+    // fprintf
+    // fwprintf
+    
+    // fgets
+    // fgetc
+    // fgetwc
+    // fgetws
+    // 
+    
     return 0;
 }
