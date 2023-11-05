@@ -50,13 +50,11 @@ void CrossPlatformFunc()
 //     std::cout << "MacOS only!" << '\n';
 // }
 
-
-
 #include "User.h"
 #include "User.h"
 
 int main(int argc, char* argv[])
-{
+{    
     User user;
     
     CrossPlatformFunc();
@@ -79,6 +77,15 @@ int main(int argc, char* argv[])
         std::cout << "filename = " << test << '\n';
     }*/
 
+
+
+
+    int** mdarr = new int*[3];
+
+    for (int i = 0; i < 3; ++i)
+    {
+        mdarr[i] = new int[3];
+    }
 
     return 0;
 }
